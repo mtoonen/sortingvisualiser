@@ -13,15 +13,14 @@ import org.apache.commons.lang3.ArrayUtils;
  *
  * @author Meine Toonen
  */
-public class InsertionSort extends Sorter{
-    
-    
-    public InsertionSort(int[] data, int number){
+public class InsertionSort extends Sorter {
+
+    public InsertionSort(int[] data, int number) {
         super(data, "Insertion Sort", number);
     }
-    
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+
     }
 
     @Override
@@ -29,27 +28,21 @@ public class InsertionSort extends Sorter{
         for (int i = 1; i < data.length; i++) {
             int value = data[i];
             int tempI = i;
-            for (int j = i -1; j >= 0; j--) {
-                
-                try {
-                    int toCheck = data[j];
-                    if(value < toCheck){
-                        data[j] = value;
-                        data[tempI] = toCheck;
-                        visualize(tempI, j);
-                        tempI -=1;
-                        value = data[tempI];
-                    }else{
-                        break;
-                    }
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(InsertionSort.class.getName()).log(Level.SEVERE, null, ex);
+            for (int j = i - 1; j >= 0; j--) {
+                int toCheck = data[j];
+                if (value < toCheck) {
+                    data[j] = value;
+                    data[tempI] = toCheck;
+                    visualize(tempI, j);
+                    tempI -= 1;
+                    value = data[tempI];
+                } else {
+                    break;
                 }
-                
-                
+
             }
         }
-        
+
     }
-    
+
 }

@@ -24,7 +24,7 @@ public abstract class Sorter implements Runnable{
         
     }
     
-    public void visualize(int currentIndex, int indexToCheck) throws InterruptedException{
+    public void visualize(int currentIndex, int indexToCheck) {
         v.setNewData(data, currentIndex, indexToCheck);
     }
     

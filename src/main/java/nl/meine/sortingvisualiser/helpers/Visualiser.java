@@ -12,6 +12,8 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.util.Arrays;
 import java.util.OptionalInt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -57,8 +59,12 @@ public class Visualiser extends JFrame {
         frame.setVisible(true);
     }
 
-    public void setNewData(int[] data, int currentIndex, int indexToCheckAgainst) throws InterruptedException {
-        Thread.sleep(DELAY);
+    public void setNewData(int[] data, int currentIndex, int indexToCheckAgainst) {
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Visualiser.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.currentIndex = currentIndex;
         this.indexToCheckAgainst = indexToCheckAgainst;
         this.data = data;

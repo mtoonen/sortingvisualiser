@@ -7,6 +7,7 @@ package nl.meine.sortingvisualiser.helpers;
 
 import java.util.Random;
 import nl.meine.sortingvisualiser.sorters.BubbleSort;
+import nl.meine.sortingvisualiser.sorters.CombSorter;
 import nl.meine.sortingvisualiser.sorters.InsertionSort;
 import nl.meine.sortingvisualiser.sorters.Sorter;
 
@@ -17,7 +18,7 @@ import nl.meine.sortingvisualiser.sorters.Sorter;
 public class App {
 
     public static void main(String[] a) {
-        int number = 50;
+        int number = 40;
 
         Random rand = new Random();
         int max = 128;
@@ -30,7 +31,7 @@ public class App {
             data2[i] = val;
         }
         
-        BubbleSort s1 = new BubbleSort(data1,0);
+        Sorter s1 = new CombSorter(data1,0);
       //  InsertionSort s2 = new InsertionSort(data2,1);
         Thread t1 = new Thread(s1);
    //     Thread t2 = new Thread(s2);
